@@ -54,6 +54,7 @@ public class HttpRequest {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 	}
 
