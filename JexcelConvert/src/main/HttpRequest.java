@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.Buffer;
+
 
 public class HttpRequest {
 
-	private static HttpURLConnection connection;
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -21,7 +21,7 @@ public class HttpRequest {
 		// Method 1: java.net.HttpURLConection
 		try {
 			URL url = new URL("https://restcountries.com/v3.1/all");
-			connection = (HttpURLConnection) url.openConnection();
+			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
 			// Request setup
 			connection.setRequestMethod("GET");
@@ -46,6 +46,7 @@ public class HttpRequest {
 				reader.close();
 				
 			}
+			jsonObject(responseContent);
 			System.out.println(responseContent.toString());
 			
 		} catch (MalformedURLException e) {
@@ -56,6 +57,9 @@ public class HttpRequest {
 			e.printStackTrace();
 			
 		}
+	}
+	public static void jsonObject(StringBuilder responseContent) {
+		
 	}
 
 }
