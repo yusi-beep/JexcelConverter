@@ -12,7 +12,7 @@ public class BaseCountries  {
 	private boolean independent;
 	private String status;
 	private boolean unMember;
-	private List<NativeName> curencies;
+	private List<NativeName> currencies;
 	private Idd idd;
 	private String capital;
 	private List<String> altSpelling;
@@ -57,8 +57,8 @@ public class BaseCountries  {
 		return cioc;
 	}
 	
-	public List<NativeName> getCurencies() {
-		return curencies;
+	public List<NativeName> getCurrencies() {
+		return currencies;
 	}
 	
 	public NativeName getDemonyms() {
@@ -149,8 +149,8 @@ public class BaseCountries  {
 		this.cioc = cioc;
 	}
 	
-	public void setCurencies(List<NativeName> curencies) {
-		this.curencies = curencies;
+	public void setCurrencies(List<NativeName> currencies) {
+		this.currencies = currencies;
 	}
 	
 	public void setDemonyms(NativeName demonyms) {

@@ -2,13 +2,13 @@ package main;
 
 public class NativeName {
 
-	public Native natName;
+	private Native jpn;
 	
-	public Native getNatName() {
-		return natName;
+	public Native getJpn() {
+		return jpn;
 	}
 	
-	public void setNatName(Native nativeName) {
-		this.natName = nativeName;
+	public void setJpn(Native jpn) {
+		this.jpn = jpn;
 	}
 }
