@@ -1,6 +1,6 @@
 package main;
 
-public interface Native {
-	public static final String common = "";
-	public static final String official = "";
+public class Native {
+	public  String common ;
+	public  String official ;
 }
