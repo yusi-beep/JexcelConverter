@@ -1,14 +1,11 @@
 package main;
 
-public class NativeName {
+public interface NativeName extends Native{
+	
 
-	private Native jpn;
-	
-	public Native getJpn() {
-		return jpn;
+		public static final Native nativeName = null;
+		
+		
+		
 	}
-	
-	public void setJpn(Native jpn) {
-		this.jpn = jpn;
-	}
-}
+
