@@ -33,14 +33,12 @@
         "1"
       ]
     },
-    "capital": [
-      "Tokyo"
-    ],
+    "capital":"Tokyo",
     "altSpellings": [
       "JP",
       "Nippon",
       "Nihon"
-    ],
+       ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "languages": {
@@ -54,78 +52,7 @@
       "deu": {
         "official": "Japan",
         "common": "Japan"
-      },
-      "est": {
-        "official": "Jaapan",
-        "common": "Jaapan"
-      },
-      "fin": {
-        "official": "Japani",
-        "common": "Japani"
-      },
-      "fra": {
-        "official": "Japon",
-        "common": "Japon"
-      },
-      "hrv": {
-        "official": "Japan",
-        "common": "Japan"
-      },
-      "hun": {
-        "official": "Japán",
-        "common": "Japán"
-      },
-      "ita": {
-        "official": "Giappone",
-        "common": "Giappone"
-      },
-      "jpn": {
-        "official": "日本",
-        "common": "日本"
-      },
-      "kor": {
-        "official": "일본국",
-        "common": "일본"
-      },
-      "nld": {
-        "official": "Japan",
-        "common": "Japan"
-      },
-      "per": {
-        "official": "ژاپن",
-        "common": "ژاپن"
-      },
-      "pol": {
-        "official": "Japonia",
-        "common": "Japonia"
-      },
-      "por": {
-        "official": "Japão",
-        "common": "Japão"
-      },
-      "rus": {
-        "official": "Япония",
-        "common": "Япония"
-      },
-      "slk": {
-        "official": "Japonsko",
-        "common": "Japonsko"
-      },
-      "spa": {
-        "official": "Japón",
-        "common": "Japón"
-      },
-      "swe": {
-        "official": "Japan",
-        "common": "Japan"
-      },
-      "urd": {
-        "official": "جاپان",
-        "common": "جاپان"
-      },
-      "zho": {
-        "official": "日本国",
-        "common": "日本"
+
       }
     },
     "latlng": [
@@ -136,8 +63,9 @@
     "area": 377930.0,
     "flag": "🇯🇵",
     "flags": [
-      "svg": "https://restcountries.com/data/jpn.svg",
+      {"svg": "https://restcountries.com/data/jpn.svg",
       "png": "https://restcountries.com/data/png/jpn.png"
+      }
     ],
     "demonyms": {
       "eng": {

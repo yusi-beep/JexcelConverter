@@ -2,7 +2,7 @@ package main;
 
 import java.util.List;
 
-public class BaseCountries  {
+public class BaseCountries {
 	private Name name;
 	private List<String> tld;
 	private String cca2;
@@ -12,26 +12,26 @@ public class BaseCountries  {
 	private boolean independent;
 	private String status;
 	private boolean unMember;
-	private List<NativeName> currencies;
+	private Currencies currencies;
 	private Idd idd;
 	private String capital;
-	private List<String> altSpelling;
+	private List<String> altSpellings;
 	private String region;
 	private String subregion;
-	private List<Language> languages;
-	private List<Translations> translations;
+	private Language languages;
+	private Translations translations;
 	private List<Double> latlng;
 	private boolean landlocked;
 	private double area;
 	private String flag;
-	private List<String> flags;
-	private NativeName demonyms;
+	private List<Flag> flags;
+	private Demonyms demonyms;
 	
 	public BaseCountries() {
 	}
 	
-	public List<String> getAltSpelling() {
-		return altSpelling;
+	public List<String> getAltSpellings() {
+		return altSpellings;
 	}
 	
 	public double getArea() {
@@ -57,11 +57,11 @@ public class BaseCountries  {
 		return cioc;
 	}
 	
-	public List<NativeName> getCurrencies() {
+	public Currencies getCurrencies() {
 		return currencies;
 	}
 	
-	public NativeName getDemonyms() {
+	public Demonyms getDemonyms() {
 		return demonyms;
 	}
 	
@@ -69,7 +69,7 @@ public class BaseCountries  {
 		return flag;
 	}
 	
-	public List<String> getFlags() {
+	public List<Flag> getFlags() {
 		return flags;
 	}
 	
@@ -77,7 +77,7 @@ public class BaseCountries  {
 		return idd;
 	}
 	
-	public List<Language> getLanguages() {
+	public Language getLanguages() {
 		return languages;
 	}
 	
@@ -105,7 +105,7 @@ public class BaseCountries  {
 		return tld;
 	}
 	 
-	 public List<Translations> getTranslations() {
+	 public Translations getTranslations() {
 		return translations;
 	}
 	 
@@ -121,8 +121,8 @@ public class BaseCountries  {
 		return unMember;
 	}
 	
-	public void setAltSpelling(List<String> altSpelling) {
-		this.altSpelling = altSpelling;
+	public void setAltSpellings(List<String> altSpellings) {
+		this.altSpellings = altSpellings;
 	}
 	
 	public void setArea(double area) {
@@ -149,11 +149,11 @@ public class BaseCountries  {
 		this.cioc = cioc;
 	}
 	
-	public void setCurrencies(List<NativeName> currencies) {
+	public void setCurrencies(Currencies currencies) {
 		this.currencies = currencies;
 	}
 	
-	public void setDemonyms(NativeName demonyms) {
+	public void setDemonyms(Demonyms demonyms) {
 		this.demonyms = demonyms;
 	}
 	
@@ -161,7 +161,7 @@ public class BaseCountries  {
 		this.flag = flag;
 	}
 	
-	public void setFlags(List<String> flags) {
+	public void setFlags(List<Flag> flags) {
 		this.flags = flags;
 	}
 	
@@ -177,7 +177,7 @@ public class BaseCountries  {
 		this.independent = independent;
 	}
 	
-	public void setLanguages(List<Language> languages) {
+	public void setLanguages(Language languages) {
 		this.languages = languages;
 	}
 	
@@ -205,7 +205,7 @@ public class BaseCountries  {
 		this.tld = tld;
 	}
 	
-	public void setTranslations(List<Translations> translations) {
+	public void setTranslations(Translations translations) {
 		this.translations = translations;
 	}
 	

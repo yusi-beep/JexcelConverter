@@ -1,9 +1,11 @@
 package main;
 
+import name.*;
+
 public class Name  {
 	private String official;
 	private String common;
-	private NativeName nativeName;
+	public NativeName nativeName;
 	
 	public String getCommon() {
 		return common;

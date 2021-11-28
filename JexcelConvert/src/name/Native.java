@@ -1,4 +1,4 @@
-package main;
+package name;
 
 public class Native {
 	public  String common ;
