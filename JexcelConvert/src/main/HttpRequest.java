@@ -1,11 +1,20 @@
 package main;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
+
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DatabindException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 
 
 public class HttpRequest {
@@ -14,12 +23,12 @@ public class HttpRequest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		BufferedReader reader;
-		String line;
-		StringBuilder responseContent = new StringBuilder();
+		//BufferedReader reader;
+		//String line;
+		//StringBuilder responseContent = new StringBuilder();
 
 		// Method 1: java.net.HttpURLConection
-		try {
+		/*try {
 			URL url = new URL("https://restcountries.com/v3.1/all");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
@@ -46,8 +55,9 @@ public class HttpRequest {
 				reader.close();
 				
 			}
-			jsonObject(responseContent);
-			System.out.println(responseContent.toString());
+			//jsonObject(responseContent);					//function
+			//System.out.println(responseContent.toString());
+			
 			
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
@@ -56,12 +66,18 @@ public class HttpRequest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
-		}
-	}
-	public static void jsonObject(StringBuilder responseContent) {
-		 
+		}*/
 		
+		
+				ObjectMapper objectMapper = new ObjectMapper();
+				try {
+					List<BaseCountries> listCar = objectMapper.readValue(new File("src/main/Country.json"), new TypeReference<List<BaseCountries>>(){});
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	}
+	
 
 }
 
