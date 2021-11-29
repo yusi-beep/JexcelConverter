@@ -8,6 +8,8 @@ import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import baseClass.BaseCountries;
+
 public class JsonToJavaObject {
 
 	public static void main(String[] args) throws StreamReadException, DatabindException, IOException {
