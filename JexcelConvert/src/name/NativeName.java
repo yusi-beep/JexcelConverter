@@ -2,6 +2,7 @@ package name;
 
 public class NativeName {
 		private  Native jpn ;
+		
 		public Native getJpn() {
 			return jpn;
 		}

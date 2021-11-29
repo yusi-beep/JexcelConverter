@@ -1,22 +1,14 @@
 package main;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collection;
-import java.util.List;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DatabindException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 
 
 
@@ -25,14 +17,14 @@ public class HttpRequest {
 
 	
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)   {
 		// TODO Auto-generated method stub
-		//BufferedReader reader;
-		//String line;
-		//StringBuilder responseContent = new StringBuilder();
+		BufferedReader reader;
+		String line;
+		StringBuilder responseContent = new StringBuilder();
 
 		// Method 1: java.net.HttpURLConection
-		/*try {
+		try {
 			URL url = new URL("https://restcountries.com/v3.1/all");
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
@@ -59,8 +51,8 @@ public class HttpRequest {
 				reader.close();
 				
 			}
-			//jsonObject(responseContent);					//function
-			//System.out.println(responseContent.toString());
+								
+			System.out.println(responseContent.toString());
 			
 			
 		} catch (MalformedURLException e) {
@@ -70,12 +62,11 @@ public class HttpRequest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			
-		}*/
-			
-				ObjectMapper objectMapper = new ObjectMapper();
-				objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-				BaseCountries[] name = objectMapper.readValue(new File("src/main/Country.json"), BaseCountries[].class);
-				objectMapper.writeValue(new File("target/NewCountry.json"), name);
+		}
+
+		
+				
 	}
+
 }
 
