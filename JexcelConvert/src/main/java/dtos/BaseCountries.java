@@ -20,7 +20,7 @@ public class BaseCountries {
 	private boolean unMember;
 	private Currencies currencies;
 	private Idd idd;
-	private List<String> capital;
+	public List<String> capital;
 	private List<String> altSpellings;
 	private String region;
 	private String subregion;
