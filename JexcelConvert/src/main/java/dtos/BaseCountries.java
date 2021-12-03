@@ -1,10 +1,14 @@
-package baseClass;
+package dtos;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Data;
 
-public @Data class BaseCountries {
+@Data
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class BaseCountries {
 	private Name name;
 	private List<String> tld;
 	private String cca2;
@@ -16,7 +20,7 @@ public @Data class BaseCountries {
 	private boolean unMember;
 	private Currencies currencies;
 	private Idd idd;
-	private String capital;
+	private List<String> capital;
 	private List<String> altSpellings;
 	private String region;
 	private String subregion;
@@ -26,8 +30,6 @@ public @Data class BaseCountries {
 	private boolean landlocked;
 	private double area;
 	private String flag;
-	private List<Flag> flags;
+	private Flag flags;
 	private Demonyms demonyms;
-	
-	
 }

@@ -33,7 +33,7 @@
         "1"
       ]
     },
-    "capital":"Tokyo",
+    "capital":["Tokyo"],
     "altSpellings": [
       "JP",
       "Nippon",
@@ -62,11 +62,11 @@
     "landlocked": false,
     "area": 377930.0,
     "flag": "🇯🇵",
-    "flags": [
+    "flags": 
       {"svg": "https://restcountries.com/data/jpn.svg",
       "png": "https://restcountries.com/data/png/jpn.png"
       }
-    ],
+    ,
     "demonyms": {
       "eng": {
         "f": "Japanese",

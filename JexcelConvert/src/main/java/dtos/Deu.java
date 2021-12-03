@@ -1,8 +1,11 @@
-package translations;
+package dtos;
 
 import lombok.Data;
 
-public @Data class Ces {
+@Data 
+public class Deu {
+	
 	private String official;
+	
     private String common;
 }

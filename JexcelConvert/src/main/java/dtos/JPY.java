@@ -1,8 +1,11 @@
-package baseClass;
+package dtos;
 
 import lombok.Data;
 
-public @Data class JPY{
+@Data 
+public class JPY{
+	
     private String name;
+    
     private String symbol;
 }

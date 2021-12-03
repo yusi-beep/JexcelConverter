@@ -1,4 +1,4 @@
-package baseClass;
+package dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
