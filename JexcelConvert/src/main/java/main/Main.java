@@ -18,11 +18,10 @@ import jxl.write.WritableCellFormat;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
-import jxl.write.biff.RowsExceededException;
 
 public class Main {
 
-	public static void main(String[] args) throws RowsExceededException, WriteException {
+	public static void main(String[] args) throws WriteException {
 
 			BufferedReader reader;
 			String line;
@@ -62,7 +61,6 @@ public class Main {
 				WritableSheet sheet = workbook.createSheet("Sheet 1", 0);
 
 				WritableCellFormat headerFormat = new WritableCellFormat();
-				
 
 				Label headerLabel = new Label(0, 0, "Name of country", headerFormat);
 				sheet.setColumnView(0, 60);
@@ -70,8 +68,8 @@ public class Main {
 				WritableCellFormat cellFormat = new WritableCellFormat();
 				cellFormat.setWrap(true);
 
-				for(int i=0;i<country.length;i++) {
-				Label cellLabel = new Label(0, i+2, country[i].getName().getCommon(), cellFormat);
+				for(int i = 0; i < country.length; i++) {
+				Label cellLabel = new Label(0, i + 2, country[i].getName().getCommon(), cellFormat);
 				sheet.addCell(cellLabel);
 				}
 				
