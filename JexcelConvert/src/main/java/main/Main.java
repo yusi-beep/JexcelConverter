@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,12 +26,16 @@ public class Main {
 	* Timeout in milliseconds.
 	* author: Yusuf
 	*/
-	static final int TIMEOUT = 5000;
+	private static final int TIMEOUT = 5000;
 	/**
 	* Status range.
 	* author: Yusuf
 	*/
-	static final int RANGE = 299;
+	private static final int RANGE = 299;
+	/**
+	 * Used for logging.
+	 */
+	private static final Logger LOGGER = Logger.getAnonymousLogger(Main.class.getName());
 	/**
 	 * Extracting json file from URL address.
 	 * @param args
@@ -41,8 +47,9 @@ public class Main {
 			String line;
 			StringBuilder responseContent = new StringBuilder();
 			try {
-				URL url =
-				new URL("https://restcountries.com/v3.1/all");
+				URL url =new URL("https://restcountries.com/v3.1/all");
+				LOGGER.log(Level.FINE, "File extracted successfully");
+
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
 				connection.setRequestMethod("GET");
@@ -65,7 +72,7 @@ public class Main {
 				BaseCountries[] country = objectMapper.readValue(json, BaseCountries[].class);
 
 				objectMapper.writeValue(new File("target/NewCountry.json"), country);
-				System.out.println("NewCountry.json is completely created.");
+				LOGGER.log(Level.FINE, "NewCountry.json is completely created.");
 
 				File currDir = new File(".");
 				String path = currDir.getAbsolutePath();
@@ -89,14 +96,15 @@ public class Main {
 
 				workbook.write();
 				workbook.close();
-				System.out.println("Countries.xls is completely created.");
+				LOGGER.log(Level.FINE, "Countries.xls is completely created.");
+
 
 			} catch (MalformedURLException e) {
 
-				e.printStackTrace();
+				LOGGER.log(Level.SEVERE, "Someting went wrong with URL.", e.getStackTrace());
 			} catch (IOException e) {
 
-				e.printStackTrace();
+				LOGGER.log(Level.SEVERE, "Someting went wrong with file.", e.getStackTrace());
 			}
 	}
 }
