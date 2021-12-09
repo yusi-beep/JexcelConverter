@@ -2,10 +2,10 @@ package dtos;
 
 import lombok.Data;
 
-@Data 
-public class JPY{
-	
+@Data
+public class JPY {
+
     private String name;
-    
+
     private String symbol;
 }
