@@ -7,19 +7,16 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import ch.qos.logback.classic.Logger;
 import dtos.BaseCountries;
 import jxl.Workbook;
-import jxl.write.Label;
-import jxl.write.WritableCellFormat;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
+import jxl.write.*;
 
 public class Main {
 	/**
@@ -31,11 +28,9 @@ public class Main {
 	* Status range.
 	* author: Yusuf
 	*/
+	 private static final Logger logger 
+     = (Logger) LoggerFactory.getLogger(Main.class);
 	private static final int RANGE = 299;
-	/**
-	 * Used for logging.
-	 */
-	private static final Logger LOGGER = Logger.getAnonymousLogger(Main.class.getName());
 	/**
 	 * Extracting json file from URL address.
 	 * @param args
@@ -48,7 +43,7 @@ public class Main {
 			StringBuilder responseContent = new StringBuilder();
 			try {
 				URL url =new URL("https://restcountries.com/v3.1/all");
-				LOGGER.log(Level.FINE, "File extracted successfully");
+				logger.info("File extracted successfully ");
 
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
@@ -72,7 +67,7 @@ public class Main {
 				BaseCountries[] country = objectMapper.readValue(json, BaseCountries[].class);
 
 				objectMapper.writeValue(new File("target/NewCountry.json"), country);
-				LOGGER.log(Level.FINE, "NewCountry.json is completely created.");
+				logger.info("NewCountry.json is completely created.");
 
 				File currDir = new File(".");
 				String path = currDir.getAbsolutePath();
@@ -96,16 +91,15 @@ public class Main {
 
 				workbook.write();
 				workbook.close();
-				LOGGER.log(Level.FINE, "Countries.xls is completely created.");
-
+				logger.info("Countries.xls is completely created.");
 
 			} catch (MalformedURLException e) {
-
-				LOGGER.log(Level.SEVERE, "Someting went wrong with URL.", e.getStackTrace());
+				
+				logger.error("Someting went wrong with URL.", e.getStackTrace());
 			} catch (IOException e) {
-
-				LOGGER.log(Level.SEVERE, "Someting went wrong with file.", e.getStackTrace());
-			}
+				
+				logger.error("Someting went wrong with file.", e.getStackTrace());
+			} 
 	}
 }
 
